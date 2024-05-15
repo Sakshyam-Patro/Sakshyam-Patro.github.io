@@ -473,3 +473,101 @@ span {
     text-align: center; /* Center horizontally */
 }
 
+/* Default styles for all screen sizes */
+/* Add your existing CSS code here */
+
+/* Media query for screens smaller than 768px (e.g., smartphones) */
+@media only screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .header .logo {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        display: none; /* Hide navbar by default on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color); /* Set background color to match header */
+        z-index: 99; /* Ensure it's above other content */
+        transition: transform 0.3s ease-in-out; /* Add smooth transition for animation */
+        transform: translateY(-100%); /* Hide navbar off-screen initially */
+    }
+
+    .navbar.active {
+        transform: translateY(0); /* Show navbar when active */
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    #menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+    }
+
+    section {
+        padding: 8rem 5% 2rem; /* Adjust section padding for smaller screens */
+    }
+
+    .home {
+        background-size: 200px; /* Adjust background size for smaller screens */
+        background-position: 90%; /* Adjust background position for smaller screens */
+    }
+
+    .home-content h1 {
+        font-size: 4rem; /* Adjust font size for smaller screens */
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .btn-box {
+        width: 100%; /* Make button box full width on smaller screens */
+    }
+
+    .btn-box .btn {
+        width: 100%; /* Make buttons full width on smaller screens */
+        margin-bottom: 1rem; /* Add space between buttons */
+    }
+
+    .home-sci {
+        bottom: 2rem; /* Adjust position of social icons */
+    }
+
+    .about-img {
+        width: 20rem; /* Adjust size of about image */
+        height: 20rem; /* Adjust size of about image */
+    }
+
+    .about-content h3 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .education-column .title {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .education-column .education-box {
+        border-left: none; /* Remove left border */
+    }
+
+    .footer {
+        padding: 1rem 5%; /* Adjust padding for smaller screens */
+    }
+
+    .footer-text {
+        text-align: center; /* Center align footer text */
+    }
+}
