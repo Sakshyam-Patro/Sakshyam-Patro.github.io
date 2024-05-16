@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
@@ -47,7 +48,7 @@ body {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: transparent;
+    background: var(--second-bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,8 +56,8 @@ body {
     transition: .3s;
 }
 
-.header .sticky {
-    background: yellowgreen;
+.header.sticky {
+    background: var(--bg-color);
 }
 
 .logo {
@@ -77,8 +78,8 @@ body {
 .navbar a:hover,
 .navbar a:active {
     color: var(--main-color);
-    display: flex;
-  transform: translateY(0);
+    /*display: flex;*/
+    transform: translateY(0);
 }
 
 #menu-icon {
@@ -119,8 +120,8 @@ section {
 
 .home-content {
     max-width: 80rem;
-    margin: 0 auto; /* Center the content horizontally */
-    text-align: center; /* Center the text */
+    margin: 0 auto;
+    text-align: center; 
 }
 
 .home-content h1 {
@@ -153,6 +154,25 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 1.5s;
+}
+
+.home-content .text-animate h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 85%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 1.5s;
 }
 
 .home-content p {
@@ -338,10 +358,12 @@ span {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border-top: .2rem solid var(--main-color);
-    border-bottom: .2rem solid var(--main-color);
-    border-left: .2rem solid var(--second-bg-color);
-    border-right: .2rem solid var(--second-bg-color);
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -509,101 +531,320 @@ span {
     text-align: center; /* Center horizontally */
 }
 
-/* Default styles for all screen sizes */
-/* Add your existing CSS code here */
-
-/* Media query for screens smaller than 768px (e.g., smartphones) */
+/*
 @media only screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
+
 
     .header {
         padding: 1rem 5%;
     }
-
+    
     .header .logo {
         font-size: 2rem;
     }
-
+    
     .navbar {
-        display: none; /* Hide navbar by default on smaller screens */
+        display: none; 
         flex-direction: column;
         align-items: center;
         position: fixed;
         top: 5rem;
         left: 0;
         width: 100%;
-        background-color: var(--bg-color); /* Set background color to match header */
-        z-index: 99; /* Ensure it's above other content */
-        transition: transform 0.3s ease-in-out; /* Add smooth transition for animation */
-        transform: translateY(-100%); /* Hide navbar off-screen initially */
+        background-color: var(--bg-color);
+        z-index: 99;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
     }
-
+    
     .navbar.active {
-        transform: translateY(0); /* Show navbar when active */
+        transform: translateY(0);
     }
-
+    
     .navbar a {
         font-size: 1.5rem;
         margin: 1rem 0;
     }
-
+    
     #menu-icon {
-        display: block; /* Show menu icon on smaller screens */
+        display: block;
     }
-
+    
     section {
-        padding: 8rem 5% 2rem; /* Adjust section padding for smaller screens */
+        padding: 8rem 5% 2rem;
     }
-
+    
     .home {
-        background-size: 200px; /* Adjust background size for smaller screens */
-        background-position: 90%; /* Adjust background position for smaller screens */
+        background-size: 200px;
+        background-position: 90%;
     }
-
+    
     .home-content h1 {
-        font-size: 4rem; /* Adjust font size for smaller screens */
+        font-size: 4rem;
     }
-
+    
     .home-content .text-animate h3 {
-        font-size: 2.5rem; /* Adjust font size for smaller screens */
+        font-size: 2.5rem;
     }
-
+    
     .btn-box {
-        width: 100%; /* Make button box full width on smaller screens */
+        width: 100%;
     }
-
+    
     .btn-box .btn {
-        width: 100%; /* Make buttons full width on smaller screens */
-        margin-bottom: 1rem; /* Add space between buttons */
+        width: 100%;
+        margin-bottom: 1rem;
     }
-
+    
     .home-sci {
-        bottom: 2rem; /* Adjust position of social icons */
+        bottom: 2rem;
     }
-
+    
     .about-img {
-        width: 20rem; /* Adjust size of about image */
-        height: 20rem; /* Adjust size of about image */
+        width: 20rem;
+        height: 20rem;
     }
-
+    
     .about-content h3 {
-        font-size: 2rem; /* Adjust font size for smaller screens */
+        font-size: 2rem;
     }
-
+    
     .education-column .title {
-        font-size: 2rem; /* Adjust font size for smaller screens */
-        margin-left: 0; /* Remove left margin */
+        font-size: 2rem;
+        margin-left: 0;
     }
-
+    
     .education-column .education-box {
-        border-left: none; /* Remove left border */
+        border-left: none;
     }
-
+    
     .footer {
-        padding: 1rem 5%; /* Adjust padding for smaller screens */
+        padding: 1rem 5%;
+    }
+    
+    .footer-text {
+        text-align: center;
+    }
+    
+*/
+    @media (max-width:1200px) {
+        html {
+            font-size: 55%;
+        }
     }
 
-    .footer-text {
-        text-align: center; /* Center align footer text */
+    @media (max-width:991px) {
+        .header {
+            padding: 2rem 4%;
+        }
+
+        section {
+            padding: 10rem 4% 2rem;
+        }
+
+        .home {
+            padding: 0 4%;
+        }
+
+        .footer {
+            padding: 2rem 4%;
+        }
+    }
+
+
+    @media (max-width:768px) {
+
+
+
+        .header {
+            background: var(--second-bg-color); 
+            
+        }
+
+        #menu-icon {
+            display: block;
+        }
+
+        .navbar {
+            position: absolute;
+            top:100%;
+            left: -100%;
+            width:100%;
+            padding: 1rem 4%;
+            background: var(--bg-color);
+            box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, .2);
+            transition: .25s ease;
+            transition-delay: .25s;
+        }
+
+        .navbar.active {
+            left: 0;
+            transition-delay: 0s;
+        }
+        .navbar a {
+            display: block;
+            font-size: 2rem;
+            margin: 3rem 0;
+        }
+
+        #menu-icon {
+            display: block;
+        }
+        
+        section {
+            padding: 8rem 5% 2rem;
+        }
+        
+        .home {
+            background-size: 200px;
+            background-position: 90%;
+        }
+        
+        .home-content h1 {
+            font-size: 4rem;
+        }
+        
+        .home-content .text-animate h3 {
+            font-size: 2.5rem;
+        }
+        
+        .btn-box {
+            width: 100%;
+        }
+        
+        .btn-box .btn {
+            margin-bottom: 1rem;
+        }
+        
+        .home-sci {
+            bottom: 2rem;
+        }
+        
+        .about-img {
+            width: 20rem;
+            height: 20rem;
+        }
+        
+        .about-content h3 {
+            font-size: 2rem;
+        }
+        
+        .education-column .title {
+            font-size: 2rem;
+            margin-left: 0;
+        }
+        
+        .education-column .education-box {
+            border-left: none;
+        }
+        
+        .footer {
+            padding: 1rem 5%;
+        }
+        
+        .footer-text {
+            text-align: center;
+        }
+
+    } 
+
+
+
+/*KeyFrames Animation*/
+
+@keyframes homeBgText {
+    0%,10%,100% {
+        background-position: -33rem 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
     }
 }
+
+@keyframes homeCursorText {
+    0%,10%,100% {
+        width: 0%;
+    }
+    65%, 78%, 85% {
+        width: 100%;
+        opacity: 1;
+    }
+    75%, 81% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+
+    .contact-animation {
+        position: relative;
+        width: 10em;
+        height: 10em;
+        margin: 10rem auto; /* Adjust margin as needed */
+        background-color: transparent;
+    }
+    
+    .contact-animation #box {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 5em;
+        height: 5em;
+        background-color: var(--second-bg-color);
+        border: .25em solid whitesmoke;
+        border-radius: 25%;
+        transform: translate(-50%, -1em) rotate(-45deg);
+        animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+    }
+    
+    @keyframes push {
+        0% {
+            transform: translate(-50%, -1em) rotate(-45deg);
+        }
+        5% {
+            transform: translate(-50%, -1em) rotate(-50deg);
+        }
+        20% {
+            transform: translate(calc(-50% + 1em), -2em) rotate(47deg);
+        }
+        25% {
+            transform: translate(calc(-50% + 1em), -2em) rotate(45deg);
+        }
+        30% {
+            transform: translate(calc(-50% + 1em), -2em) rotate(40deg);
+        }
+        45% {
+            transform: translate(calc(-50% + 2em), -3em) rotate(137deg);
+        }
+        50% {
+            transform: translate(calc(-50% + 2em), -3em) rotate(135deg);
+        }
+        55% {
+            transform: translate(calc(-50% + 2em), -3em) rotate(130deg);
+        }
+        70% {
+            transform: translate(calc(-50% + 3em), -4em) rotate(217deg);
+        }
+        75% {
+            transform: translate(calc(-50% + 3em), -4em) rotate(220deg);
+        }
+        100% {
+            transform: translate(-50%, -1em) rotate(-225deg);
+        }
+    }
+    
+    
+
+
+
+
+
+
+
+
