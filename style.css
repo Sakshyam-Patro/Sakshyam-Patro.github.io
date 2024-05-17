@@ -10,13 +10,14 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
-
+/*
 :root {
     --bg-color: #081b29;
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
-}
+}*/
+
 /*
 :root {
     --bg-color: #03253d;
@@ -25,13 +26,14 @@
     --main-color: #bed6e4;
 }*/
 
-/*
+
 :root {
-    --bg-color: #ffffff;
-    --second-bg-color: #d3d5d6 ;
-    --text-color: #000000;
-    --main-color: #000000;
-}*/
+    --bg-color: #000000;
+    --second-bg-color: #515151;
+    /*--second-bg-color: #d3d5d6 ;*/
+    --text-color: #ffffff;
+    --main-color: #ffffff;
+}
 
 html {
     font-size: 62.5%;
@@ -146,7 +148,7 @@ section {
 
 .home-content .text-animate {
     position: relative;
-    width: 32.8rem;
+    width: 43rem;
 }
 
 .home-content .text-animate h3 {
@@ -157,7 +159,7 @@ section {
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
-    background-position: -33rem 0;
+    background-position: -43rem 0;
     animation: homeBgText 6s linear infinite;
     animation-delay: 1.5s;
 }
@@ -319,7 +321,7 @@ section {
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     padding-bottom: 5rem;
 }
 
@@ -754,7 +756,7 @@ span {
 
 @keyframes homeBgText {
     0%,10%,100% {
-        background-position: -33rem 0;
+        background-position: -43rem 0;
     }
     65%, 85% {
         background-position: 0 0;
@@ -840,11 +842,3 @@ span {
     }
     
     
-
-
-
-
-
-
-
-
