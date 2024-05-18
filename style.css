@@ -138,6 +138,7 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    margin-top: 2rem;
     margin-bottom: 1.5rem; /* Add margin at the bottom of the "College Student" text */
 }
 
