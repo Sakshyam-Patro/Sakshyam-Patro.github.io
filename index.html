@@ -1,282 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sakshyam Patro</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
+    <meta name="description" content="Sakshyam Patro — Software Engineering Intern & Project Manager at COUNTRY Financial. Applied Mathematics & CS at UIUC.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Sakshyam Patro</a>
+    <canvas id="geo-canvas" aria-hidden="true"></canvas>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <!-- <a href="#skills">Skills</a> -->
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-<!-- Home -->
-
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Hello! I'm <span>Sakshyam Patro </span></h1>
-            <div class="text-animate">
-                <h3>Curious. Learner. Explorer.</h3>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Sakshyam Patro</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
             </div>
-            <!-- 
-            <p>
-                My name is Sakshyam Patro, a sophomore studying at the University of Illinois Urbana-Champaign.
-            </p> -->
-            <div class ="btn-box">
-                <!-- <a href="#" class="btn">Hire me</a> -->
-                <a href="#contact" class="btn">Connect</a>
-
-            </div>
-
-
-            <div class="home-sci">
-                <a href="https://www.linkedin.com/in/sakshyampatro/"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://twitter.com/SakshyamPatro"><i class='bx bxl-twitter' ></i></a>
-                <a href="https://medium.com/@sakshyampatro1103"><i class='bx bxl-medium' ></i></a>
-                <a href="https://github.com/Sakshyam-Patro"><i class='bx bxl-github' ></i></a>
-            </div>
-
-            <div class="home-imgHover"></div>
-    </section>
-
-<!-- About -->
-
-    <section class="about" id="about">
-        <h2 class="heading">About <span>Me</span></h2>
-        
-        <div class="about-img">
-            <img src="patro.png" alt="">
-            <span class="circle-spin"></span>
-        </div>
-
-
-        <div class="about-content">
-            <!-- <h3>College Student</h3> -->
-            <p> My name is Sakshyam Patro, a sophomore studying at the University of Illinois Urbana-Champaign. I have experience with blockchain and web developement. I also enjoy running and watching documentaries.
-            </p>
-<!-- 
-            <div class="btn-box btns">
-                <a href="#" class="btn">Read More</a>
-            </div> -->
-
-        </div>
-    </section>
-
-
-    <!-- Education -->
-
-    <section class="education" id="education">
-        <h2 class="heading"><span>Education</span></h2>
-
-        <div class="education-row">
-            <div class="education-column">
-                <h3 class="title"></h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> 2022 - 2026</div>
-                            <h3>University of Illinois Urbana-Champaign - Bachelor's Degree</h3>
-                            <p>I am studying applied math and CS. My relevant coursework includes Data Structures, Computer Architecture, Linear Algebra, Discrete Structures, Data Science Discovery, Calculus Series, Differential Equations, and Statistics and Probability 1.</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> 2020 - 2022</div>
-                            <h3>Shri Ram Global School, Bangalore</h3>
-                            <p>Grade 11-12. Covid years.</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> 2016 - 2020</div>
-                            <h3>Ekya School ITPL, Bangalore</h3>
-                            <p>Grade 7-10. Spent some of the best time of my life here.</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> 2008 - 2016</div>
-                            <h3>Baldwin Boys High School, Bangalore</h3>
-                            <p>LKG - Grade 6.</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
+    </nav>
 
-    </section>
-
-
-<!-- Experience -->
-    <section class="Experience" id="experience">
-        <h2 class="heading"><span>Experience</span></h2>
-
-        <div class="education-row">
-            <div class="education-column">
-                <h3 class="title"></h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> August 2024 - Present</div>
-                            <h3>COUNTRY Financial - Champaign, Illinois</h3>
-                            <h4>Data Science Intern</h4>
-                            <p> <li>Working on AI projects using Python, R, and various libraries to develop innovative solutions</li>
-                                <li>Collaborating with UI/UX designers and developers to integrate AI-driven features into existing systems</li>
-                                <li>Engaging in cloud-related tasks to enhance data processing and model deployment capabilities</li>
-                                <li>Applying machine learning techniques to improve business processes and decision-making</li>
-                                </p>
-                        </div>
-                    </div>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> June 2024 - July 2024</div>
-                            <h3>Ernst & Young (EY) - Bangalore, India</h3>
-                            <h4>AI and Data Science Intern</h4>
-                            <p> <li>Developed an NLP-driven chat application using RASA and spaCy, improving user engagement by 30%</li>
-                                <li>Implemented custom ML models, reducing response time by 40% and increasing accuracy by 25%</li>
-                                <li>Collaborated with a team of 5 to integrate the application with existing EY systems</li>
-                                </p>
-                        </div>
-                    </div>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> September 2022 - Present</div>
-                            <h3>Illini Blockchain - Champaign, IL</h3>
-                            <h4>Research Analyst and Head of Marketing</h4>
-                            <p> <li>Selected as 1 of 8 for the research team of 141 candidates through rigorous selection based on social, research, and web3 skills.</li>
-                                <li>Crafted and curated compelling social media content for Illini Blockchain, resulting in a robust following of 1500+ followers across Instagram, Twitter , and LinkedIn.</li>
-                                <li>Published an Ethereum course on 101.xyz, achieving over 3500+ user completions.</li>
-                                <li>Ideated, developed, and authored news articles breaking down complex blockchain concepts tailored for beginners to an audience of 700+ readers. <a href="https://illiniblockchains-newsletter.beehiiv.com/p/ecosystem-blockchainbased-gaming-industry?utm_source=illiniblockchains-newsletter.beehiiv.com&utm_medium=newsletter&utm_campaign=the-ecosystem-of-the-blockchain-based-gaming-industry"> Link</a></li>
-                                </p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> March 2024 - Present</div>
-                            <h3>Office of Undergraduate Admissions - Urbana, IL</h3>
-                            <h4>Global Ambassador </h4>
-                            <p>
-                            <li>Selected as a UIUC representative for international prospective students in more than 100 countries.</li>
-                            <li>Solved queries for over 450+ students worldwide through email and led orientation and prospective student webinars virtually for 10+ countries.</li>
-                            <li>Generate strategies to improve program and event experiences for prospective international students.</li>
-                            </p>
-                            </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> January 2024 - May 2024</div>
-                            <h3>ATLAS Web Development Internship - Champaign, IL</h3>
-                            <h4>Web Development Intern</h4>
-                            <p> <li>Designed and created websites for clients and faculty at the university using WordPress, HTML, CSS, and JavaScript.</li>
-                                <li>Built templates for future projects in WordPress and created training material for future interns.</li>
-                                </p>
-                            </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> August 2023 - October 2023</div>
-                            <h3>Agronomy Seed House - Champaign, IL</h3>
-                            <h4>Agricultural Lab Assistant</h4>
-                            <p> <li>Optimized the soybean production chain by implementing strategies for maximizing production and collection.</li>
-                                <li>Helped lab management, implementing ways to reduce brute labor work through small-scale automation.</li>
-                                </p>
-                            </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> July 2021 - August 2021</div>
-                            <h3>Remote Sensing and GIS Summer School, Indian Space Research Organization - Bangalore, India</h3>
-                            <h4>Research Fellow</h4>
-                            <p> <li>Learned the foundational principles of remote sensing technology and applied them to environmental research.</li>
-                                <li>Engaged in discussions on remote sensing technology's future impact and collaborated with distinguished scientists.</li>
-                                </p>
-                            </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bx-calendar'></i> May 2014 - Present </div>
-                            <h3>VMR Music Academy - Bangalore, India</h3>
-                            <h4>Lead Guitarist</h4>
-                            <p> <li>Directed successful performances for the group, captivating audiences of over 900 at the PFS Bangalore event on two occasions.</li>
-                                <li>Attained exceptional performance, earning distinctions in 4 Trinity College London Grade exams.</li>
-                                </p>
-                            </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
-
-     <!-- Contact  -->
-
-     <!-- Contact  -->
-<section class="contact" id="contact">
-
-    <h2 class="heading">Contact <span>Me</span></h2>
-    
-    <p class="connect-text">I would love to connect!</p>
-    <div class="contact-icons">
-        <a href="https://www.linkedin.com/in/sakshyampatro/" class="contact-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://twitter.com/SakshyamPatro" class="contact-icon" target="_blank"><i class='bx bxl-twitter'></i></a>
-        <a href="mailto:sakshyampatro1103@gmail.com" class="contact-icon" target="_blank"><i class='bx bxl-gmail'></i></a>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <div class="contact-animation">
-        <div id="box"></div>
-        <div id="hill"></div>
-      </div>
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 class="anim">Sakshyam Patro</h1>
+                <p class="hero-subtitle anim">Software Engineering Intern & Project Manager at <strong>COUNTRY Financial</strong></p>
+                <p class="hero-desc anim">Applied Mathematics & Computer Science at <strong>UIUC '26</strong>. Building custom AI agents, automating enterprise testing frameworks, and leading full-stack development teams.</p>
+                <div class="hero-links anim">
+                    <a href="https://github.com/sakshyam-patro" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sakshyampatro/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="LinkedIn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://x.com/GordianFra12173" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="X / Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="mailto:sakshyampatro1103@gmail.com" class="btn-primary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-scroll" aria-hidden="true"><div class="scroll-line"></div></div>
+        </section>
 
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title anim">Experience</h2>
 
-</section>
+                <!-- COUNTRY Financial -->
+                <div class="exp-group anim">
+                    <div class="exp-company">
+                        <h3>COUNTRY Financial</h3>
+                        <div class="exp-company-meta">
+                            <span class="exp-type">Internship</span>
+                            <span class="exp-duration-badge">1 yr 7 mos</span>
+                            <span class="exp-location">Champaign, IL &middot; On-site</span>
+                        </div>
+                    </div>
 
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>Software Engineering Intern & Project Manager</h4>
+                            <span class="exp-date">May 2025 &mdash; Present<span class="date-duration">10 mos</span></span>
+                        </div>
+                        <span class="exp-progression">Current Role &middot; Promoted from Data Science</span>
+                        <ul>
+                            <li>Building custom AI agents for COUNTRY to automate testing frameworks, implementing risk-based testing with AI/ML to prioritize test coverage across enterprise systems</li>
+                            <li>Led 8-person development team for Skill Gap Analysis web application, architecting full-stack solution with React frontend and Python backend integrated with Workday systems</li>
+                            <li>Designed comprehensive unit testing framework for CDC data pipelines using Pytest, achieving 80%+ code coverage for Zena job orchestration system managing 750+ production pipelines</li>
+                            <li>Developed automated view creation system for enterprise data lake curation layer with CDC logic and windowing functions</li>
+                        </ul>
+                        <div class="exp-tags"><span>React.js</span><span>Python</span><span>Azure SQL</span><span>Pytest</span><span>AI Agents</span><span>ETL</span></div>
+                    </div>
 
-    <!-- footer design -->
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>Data Science Intern</h4>
+                            <span class="exp-date">Aug 2024 &mdash; Jun 2025<span class="date-duration">11 mos</span></span>
+                        </div>
+                        <ul>
+                            <li>Built an AI underwriting chatbot using Azure and LangChain, implementing RAG architecture to analyze internal auto insurance documents for Illinois and Minnesota</li>
+                            <li>Developed proof-of-concept models for auto insurance pricing sophistication, including vehicle symbol analysis using HLDI data and customer segmentation 3.0</li>
+                            <li>Collaborated on accident & violation simplification initiatives and implemented household classification models for risk assessment</li>
+                            <li>Participated in Innovation Days hackathon to develop automation solutions aligned with UpSpeed COUNTRY Technology priorities</li>
+                        </ul>
+                        <div class="exp-tags"><span>Python</span><span>Azure</span><span>LangChain</span><span>RAG</span><span>ETL</span><span>Machine Learning</span></div>
+                    </div>
+                </div>
+
+                <!-- EY -->
+                <div class="exp-group anim">
+                    <div class="exp-company">
+                        <h3>EY (Ernst & Young)</h3>
+                        <div class="exp-company-meta">
+                            <span class="exp-type">Internship</span>
+                            <span class="exp-location">Bengaluru, India &middot; On-site</span>
+                        </div>
+                    </div>
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>AI and Data Science Intern</h4>
+                            <span class="exp-date">Jun 2024 &mdash; Jul 2024<span class="date-duration">2 mos</span></span>
+                        </div>
+                        <ul>
+                            <li>Developed an NLP-driven chat application using RASA and spaCy, improving user engagement by 30%</li>
+                            <li>Collaborated with a team of 5 to integrate the application with existing EY systems</li>
+                        </ul>
+                        <div class="exp-tags"><span>RASA</span><span>NLP</span><span>spaCy</span><span>Python</span><span>BERT</span></div>
+                    </div>
+                </div>
+
+                <!-- UIUC -->
+                <div class="exp-group anim">
+                    <div class="exp-company">
+                        <h3>University of Illinois Urbana-Champaign</h3>
+                        <div class="exp-company-meta">
+                            <span class="exp-location">Champaign, IL</span>
+                        </div>
+                    </div>
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>Global Ambassador</h4>
+                            <span class="exp-date">Mar 2024 &mdash; Jan 2025<span class="date-duration">11 mos</span></span>
+                        </div>
+                        <ul>
+                            <li>Selected as a UIUC representative for international prospective students in 100+ countries</li>
+                            <li>Solved queries for 450+ students worldwide and led orientation webinars for 10+ countries</li>
+                        </ul>
+                    </div>
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>Web Developer Intern</h4>
+                            <span class="exp-date">Jan 2024 &mdash; May 2024<span class="date-duration">5 mos</span></span>
+                        </div>
+                        <ul>
+                            <li>Designed and created websites for clients and faculty using WordPress, HTML, CSS, and JavaScript</li>
+                            <li>Built templates for future projects in WordPress and created training material for future interns</li>
+                        </ul>
+                        <div class="exp-tags"><span>WordPress</span><span>Drupal</span><span>HTML/CSS</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+
+                <!-- Illini Blockchain -->
+                <div class="exp-group anim">
+                    <div class="exp-company">
+                        <h3>Illini Blockchain</h3>
+                        <div class="exp-company-meta">
+                            <span class="exp-location">Champaign, IL</span>
+                        </div>
+                    </div>
+                    <div class="exp-role">
+                        <div class="exp-role-header">
+                            <h4>Research Analyst & Marketing Head</h4>
+                            <span class="exp-date">Sep 2022 &mdash; Dec 2024<span class="date-duration">2 yrs 4 mos</span></span>
+                        </div>
+                        <ul>
+                            <li>Selected as 1 of 8 for the research team out of 141 candidates</li>
+                            <li>Published an Ethereum course on 101.xyz, achieving 3,500+ user completions</li>
+                            <li>Authored blockchain articles breaking down complex concepts for 700+ readers</li>
+                            <li>Grew social media following to 1,500+ across Instagram, Twitter, and LinkedIn</li>
+                        </ul>
+                        <div class="exp-tags"><span>Blockchain</span><span>Technical Writing</span><span>Research</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title anim">Projects</h2>
+
+                <div class="project-list">
+                    <div class="project anim">
+                        <div class="project-info">
+                            <div class="project-top">
+                                <h3>Indo-European Explorer</h3>
+                                <div class="project-links">
+                                    <a href="https://sakshyam-patro.github.io/Indo-European-Migration-Visualization/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </a>
+                                    <a href="https://github.com/sakshyam-patro/Indo-European-Migration-Visualization" target="_blank" rel="noopener noreferrer" aria-label="Source code">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>Interactive platform visualizing 6,000 years of Indo-European language evolution with cognate comparisons, animated migration maps, a family tree of 400+ languages, and DNA evidence tracking.</p>
+                            <div class="project-tags"><span>React</span><span>TypeScript</span><span>D3.js</span><span>Leaflet</span><span>Framer Motion</span></div>
+                        </div>
+                    </div>
+
+                    <div class="project anim">
+                        <div class="project-info">
+                            <div class="project-top">
+                                <h3>Spotify Party Mode <span class="badge">1st Place &middot; UIUC Hackathon 2025</span></h3>
+                                <div class="project-links">
+                                    <a href="https://github.com/sakshyam-patro/Spotify-Party-Mode" target="_blank" rel="noopener noreferrer" aria-label="Source code">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>Real-time collaborative music voting platform. Crowds vote on songs and submit requests while DJs maintain playlist control via WebSocket synchronization and Spotify's 100M+ track catalog.</p>
+                            <div class="project-tags"><span>JavaScript</span><span>Node.js</span><span>Socket.IO</span><span>Spotify API</span><span>Tailwind CSS</span></div>
+                        </div>
+                    </div>
+
+                    <div class="project anim">
+                        <div class="project-info">
+                            <div class="project-top">
+                                <h3>CuisineQuest AI</h3>
+                                <div class="project-links">
+                                    <a href="https://github.com/sakshyam-patro/CuisineQuest-AI" target="_blank" rel="noopener noreferrer" aria-label="Source code">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>AI-powered restaurant recommendation chatbot with 92% accuracy across 50k+ records. Processes cuisine, location, and rating preferences using NLP.</p>
+                            <div class="project-tags"><span>Python</span><span>RASA</span><span>NLP</span><span>spaCy</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title anim">Skills</h2>
+                <div class="skills-cloud anim">
+                    <div class="skill-group">
+                        <h4>Languages</h4>
+                        <div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>C/C++</span><span>Java</span><span>SQL</span><span>R</span><span>HTML/CSS</span></div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Frameworks & Libraries</h4>
+                        <div class="tags"><span>React.js</span><span>Node.js</span><span>LangChain</span><span>D3.js</span><span>RASA</span><span>spaCy</span><span>BERT</span><span>Pytest</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Framer Motion</span></div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Tools & Platforms</h4>
+                        <div class="tags"><span>Azure</span><span>Azure SQL</span><span>MongoDB</span><span>Git</span><span>Docker</span><span>Tableau</span><span>WordPress</span><span>VS Code</span></div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Domains</h4>
+                        <div class="tags"><span>AI Agents</span><span>NLP</span><span>RAG Architecture</span><span>Machine Learning</span><span>ETL / Data Pipelines</span><span>CDC Logic</span><span>Risk-Based Testing</span><span>Full-Stack Development</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title anim">Education</h2>
+                <div class="edu anim">
+                    <div class="edu-main">
+                        <h3>University of Illinois Urbana-Champaign</h3>
+                        <p class="edu-degree">B.S. Mathematics &middot; <strong>May 2026</strong></p>
+                    </div>
+                    <div class="edu-details">
+                        <p><strong>Honors:</strong> Illinois Global Ambassador</p>
+                        <p><strong>Coursework:</strong> Data Structures, Computer Architecture, Linear Algebra, Discrete Structures, Data Science Discovery, Differential Equations, Statistics & Probability</p>
+                        <p><strong>Activities:</strong> Illini Blockchain, Track and Field, Intramural Football</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title anim">Get In Touch</h2>
+                <div class="contact-content anim">
+                    <p>Open to opportunities, collaborations, and conversations.</p>
+                    <div class="contact-links">
+                        <a href="mailto:sakshyampatro1103@gmail.com" class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            sakshyampatro1103@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/sakshyampatro/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/sakshyam-patro" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://x.com/GordianFra12173" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            X / Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="footer-text">
-            <p>@2024 by Sakshyam Patro</p>
-        </div>
-
+        <p>Sakshyam Patro &middot; 2025</p>
     </footer>
 
-    <script src="script.js"></script>
-
-
+    <script src="scripts.js"></script>
 </body>
 </html>
