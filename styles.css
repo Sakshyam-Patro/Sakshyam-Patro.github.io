@@ -222,17 +222,19 @@ img { display: block; max-width: 100%; }
 .intro-photo:hover img { transform: scale(1.02) rotate(-0.5deg); }
 
 /* ---- Sections ---- */
-.section { padding: 3.5rem 0; }
+.section { padding: 4rem 0; }
+.section + .section { padding-top: 0; }
 .section-title {
-  font-size: 1.85rem;
+  font-size: 1.95rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
 }
 .section-sub {
   color: var(--text-3);
   font-size: 1.05rem;
-  margin-bottom: 2.25rem;
+  font-style: italic;
+  margin-bottom: 2.5rem;
 }
 .section-title + .card-grid,
 .section-title + .skills-list,
@@ -241,14 +243,14 @@ img { display: block; max-width: 100%; }
 /* ---- Work / Cards ---- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
 }
 .card {
   background: var(--bg-soft);
   border: 1px solid var(--border-soft);
   border-radius: 14px;
-  padding: 1.5rem 1.6rem;
+  overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .card:hover {
@@ -256,6 +258,47 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--shadow-lg);
   border-color: var(--border);
 }
+
+/* Thumbnail */
+.card-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg);
+}
+.card-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--thumb-glow, transparent);
+}
+.card-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, var(--border-soft) 0 1px, transparent 1px 14px);
+  opacity: 0.5;
+}
+.card-thumb .mono {
+  position: relative;
+  z-index: 1;
+  font-size: 3.4rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0.16;
+  transition: transform 0.5s var(--ease), opacity var(--transition);
+}
+.card:hover .card-thumb .mono { transform: scale(1.08); opacity: 0.24; }
+.thumb-1 { --thumb-glow: radial-gradient(120% 100% at 28% 22%, rgba(193,138,78,0.28), transparent 60%); }
+.thumb-2 { --thumb-glow: radial-gradient(120% 100% at 28% 22%, rgba(86,150,120,0.26), transparent 60%); }
+.thumb-3 { --thumb-glow: radial-gradient(120% 100% at 28% 22%, rgba(186,104,104,0.24), transparent 60%); }
+
+.card-body { padding: 1.4rem 1.5rem 1.5rem; }
 .card-top {
   display: flex;
   justify-content: space-between;
